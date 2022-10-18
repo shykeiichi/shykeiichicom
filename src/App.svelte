@@ -1,10 +1,11 @@
 <script>
-	export let name;
+
 </script>
 
-<div class="Header">
+<header>
 	shykeiichi
-</div>
+	<div style="width: 100%; height: 20px;"></div>
+</header>
 <main>
 	<container>
 		<div class="button" id="youtube">
@@ -17,11 +18,32 @@
 		<a class="button" id="mail" href="mailto:mail@keii.dev">Mail</a>
 	</container>
 </main>
+<footer>
+	<a href="https://keii.dev" style="color: black; width: 120px; position: absolute; left: 20px;">To keii.dev</a>
+	<div>
+		shykeiichi © 2022
+	</div>
+</footer>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-	.Header {
+	footer{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgb(243, 243, 243);
+		height: auto;
+		width: 100vw;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: rgb(146, 146, 146);
+		display: grid;
+		place-items: center;
+	}
+
+	header {
 		font-family: 'Roboto', sans-serif;
 		font-weight: bold;
 		font-size: 20px;
