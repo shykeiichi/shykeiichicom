@@ -6,14 +6,16 @@
 	shykeiichi
 </div>
 <main>
-	<div class="button" id="youtube">
-		<!-- <img max-width="100" src="images/youtube.png" alt="youtube logo"/> -->
-		<a href="https://www.youtube.com/channel/UCBwQiuc-eyzM-YsrtPQLaQw">Youtube</a>
-	</div>
-	<a class="button" id="twitter" href="https://twitter.com/shykeiichi">Twitter</a>
-	<a class="button" id="github" href="https://github.com/shykeiichi">Github</a>
-	<a class="button" id="reddit" href="https://reddit.com/u/shykeiichi">Reddit</a>
-	<a class="button" id="mail" href="mailto:mail@keii.dev">Mail</a>
+	<container>
+		<div class="button" id="youtube">
+			<!-- <img max-width="100" src="images/youtube.png" alt="youtube logo"/> -->
+			<a href="https://www.youtube.com/channel/UCBwQiuc-eyzM-YsrtPQLaQw">Youtube</a>
+		</div>
+		<a class="button" id="twitter" href="https://twitter.com/shykeiichi">Twitter</a>
+		<a class="button" id="github" href="https://github.com/shykeiichi">Github</a>
+		<a class="button" id="reddit" href="https://reddit.com/u/shykeiichi">Reddit</a>
+		<a class="button" id="mail" href="mailto:mail@keii.dev">Mail</a>
+	</container>
 </main>
 
 <style>
@@ -41,12 +43,15 @@
 		color: white;
 	}
 
+	container {
+		display: grid;
+		place-items: center;
+	}
+
 	main {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		align-items: center;
-		margin-top: 15%;
+		display: grid;
+		place-items: center;
+		height: 93%;
 	}
 
 	#youtube {
