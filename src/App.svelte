@@ -19,7 +19,7 @@
 	</container>
 </main>
 <footer>
-	<a href="https://keii.dev" style="color: black; width: 120px; position: absolute; left: 20px;">To keii.dev</a>
+	<a href="https://keii.dev" style="color: rgb(146, 146, 146); width: 120px; position: absolute; left: 20px;">To keii.dev</a>
 	<div>
 		shykeiichi © 2022
 	</div>
