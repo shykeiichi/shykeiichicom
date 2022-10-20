@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>keii.dev</title>
+
+	<link rel='icon' type='image/png' href='./favicon.png'>
+	<!-- <link rel='stylesheet' href='./styles_light.css' id="themecss"> -->
+</head>
+    <body>
+        <header>
+            shykeiichi
+            <div style="width: 100%; height: 20px;"></div>
+            
+            <img src="images/light.svg" alt="light theme" id="themebutton"/>
+        </header>
+        <div class="main">
+            <div class="container">
+                <a class="button" id="youtube" href="https://www.youtube.com/c/shykeiichi">Youtube</a>
+                <a class="button" id="twitter" href="https://twitter.com/shykeiichi">Twitter</a>
+                <a class="button" id="github" href="https://github.com/shykeiichi">Github</a>
+                <a class="button" id="reddit" href="https://reddit.com/u/shykeiichi">Reddit</a>
+                <a class="button" id="mail" href="mailto:mail@keii.dev">Mail</a>
+            </div>
+        </div>
+        <footer>
+            <a href="https://keii.dev" style="color: rgb(146, 146, 146); width: 120px; position: absolute; left: 20px;">To keii.dev</a>
+            <div>
+                shykeiichi © 2022
+            </div>
+        </footer>
+        <script>
+            let theme = localStorage.getItem('theme') == undefined ? "light" : localStorage.getItem('theme');
+            updateTheme();
+
+            document.getElementById('themebutton').addEventListener('click', function (event) {
+                if(theme == "light") {
+                    theme = "dark";
+                } else {
+                    theme = "light";
+                }
+                updateTheme();
+            });
+
+            function updateTheme() {
+                document.getElementById('themebutton').setAttribute('src', `images/${theme}.svg`)
+                if(document.getElementById('themecss') != undefined) {
+                    document.getElementById('themecss').remove();
+                }
+                var cssFile = document.createElement('link');
+                cssFile.rel = 'stylesheet';
+                cssFile.href = `styles_${theme}.css`;  // or path for file {themes('/styles/mobile.css')}
+                cssFile.id = "themecss";
+                document.head.appendChild(cssFile); 
+
+                localStorage.setItem('theme', theme);
+            }
+        </script>
+    </body>
+</html>
