@@ -2,3 +2,74 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+a {
+    text-decoration: none;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: grid;
+    place-items: center;
+    font-family: monospace;
+}
+
+header {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+}
+
+img {
+    width: 20px;
+    padding-right: 5px;
+}
+
+a {
+    color: white;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    height: 85vh;
+}
+
+.button {
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 15px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+}
+
+.button:active {
+    transform: translateY(5px);
+}
