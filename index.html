@@ -34,7 +34,17 @@
             </div>
         </footer>
         <script>
-            let theme = localStorage.getItem('theme') == undefined ? "light" : localStorage.getItem('theme');
+            let theme;
+            if(localStorage.getItem('theme') == undefined) {
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = "dark";
+                } else {
+                    theme = "light";
+                }
+            } else {
+                theme = localStorage.getItem('theme');
+            }
+            
             updateTheme();
 
             document.getElementById('themebutton').addEventListener('click', function (event) {
