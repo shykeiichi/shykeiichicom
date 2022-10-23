@@ -1,52 +1,39 @@
 #black {
-    transition: all 100ms ease-in;
     background-color: #16213E;
     box-shadow: 0 5px 0 #0a0f1f;
 }
 
 #black:hover {
-    transition: all 100ms ease-in;
-    transform: translateY(-3px);
     box-shadow: 0 8px 0 #0a0f1f;
 }
 
 #black:active {
-    transform: translateY(5px);
     box-shadow: 0 0 0 rgb(131, 178, 195);
 }
 
 #red {
-    transition: all 100ms ease-in;
     background-color: #EC7272;
     box-shadow: 0 5px 0 rgb(210, 90, 90);
 }
 
 #red:hover {
-    transition: all 100ms ease-in;
-    transform: translateY(-3px);
     box-shadow: 0 8px 0 rgb(210, 90, 90);
 }
 
 #red:active {
-    transform: translateY(5px);
-    box-shadow: 0 0 0 rgb(131, 178, 195);
+    box-shadow: 0 0 0 rgb(210, 90, 90);
 }
 
 #blue {
-    transition: all 100ms ease-in;
     background-color: #7FBCD2;
     box-shadow: 0 5px 0 rgb(89, 150, 172);
 }
 
 #blue:hover {
-    transition: all 100ms ease-in;
-    transform: translateY(-3px);
     box-shadow: 0 8px 0 rgb(89, 150, 172);
 }
 
 #blue:active {
-    transition: all 50ms ease-in;
-    transform: translateY(5px);
     box-shadow: 0 0 0 rgb(131, 178, 195);
 }
 

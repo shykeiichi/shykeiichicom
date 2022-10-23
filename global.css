@@ -54,7 +54,8 @@ a {
     height: 85vh;
 }
 
-.button {
+cbutton {
+    transition: all 100ms ease-in;
     margin: 10px;
     text-align: center;
     width: 250px;
@@ -70,6 +71,13 @@ a {
     align-items: center;
 }
 
-.button:active {
+cbutton:hover {
+    transition: all 100ms ease-in;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+cbutton:active {
+    transition: all 50ms ease-in;
     transform: translateY(5px);
 }

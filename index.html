@@ -19,11 +19,11 @@
         </header>
         <div class="main">
             <div class="container">
-                <a class="button" id="red" href="https://www.youtube.com/c/shykeiichi">Youtube</a>
-                <a class="button" id="blue" href="https://twitter.com/shykeiichi">Twitter</a>
-                <a class="button" id="black" href="https://github.com/shykeiichi">Github</a>
-                <a class="button" id="red" href="https://reddit.com/u/shykeiichi">Reddit</a>
-                <a class="button" id="blue" href="mailto:mail@keii.dev">Mail</a>
+                <CButton color="#EC7272" on:redirect='https://www.youtube.com/c/shykeiichi'>Youtube</CButton>
+                <CButton on:redirect='https://twitter.com/shykeiichi'>Twitter</CButton>
+                <CButton color="#16213E" on:redirect='https://github.com/shykeiichi'>Github</CButton>
+                <CButton color="#EC7272" on:redirect='https://reddit.com/u/shykeiichi'>Reddit</CButton>
+                <CButton on:redirect='mailto:mail@keii.dev'>Mail</CButton>
             </div>
         </div>
         <footer>
@@ -32,6 +32,7 @@
                 shykeiichi © 2022
             </div>
         </footer>
+        <script type="text/javascript" src="./candyland.js"></script>
         <script>
             let theme;
             if(localStorage.getItem('theme') == undefined) {
