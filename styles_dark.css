@@ -7,45 +7,6 @@ a {
     text-decoration: none;
 }
 
-#black {
-    background-color: #16213E;
-    box-shadow: 0 5px 0 #0a0f1f;
-}
-
-#black:hover {
-    box-shadow: 0 8px 0 #0a0f1f;
-}
-
-#black:active {
-    box-shadow: 0 0 0 rgb(131, 178, 195);
-}
-
-#red {
-    background-color: rgb(210, 90, 90);
-    box-shadow: 0 5px 0 rgb(168, 62, 62);
-}
-
-#red:hover {
-    box-shadow: 0 8px 0 rgb(168, 62, 62);
-}
-
-#red:active {
-    box-shadow: 0 0 0 rgb(131, 178, 195);
-}
-
-#blue {
-    background-color: rgb(54, 110, 130);
-    box-shadow: 0 5px 0 rgb(40, 87, 106);
-}
-
-#blue:hover {
-    box-shadow: 0 8px 0 rgb(40, 87, 106);
-}
-
-#blue:active {
-    box-shadow: 0 0 0 rgb(131, 178, 195);
-}
-
 footer{
     background: #191c1d;
     color: rgb(146, 146, 146);
@@ -53,21 +14,4 @@ footer{
 
 header {
     border-bottom: 1px solid grey;
-}
-
-.button{
-	color: white;
-	background-color: #F8EDE3;
-	box-shadow: 0 5px 0 #DFD3C3;
-	color: white;
-}
-
-.button:hover {
-	background-color: #f9f1e9;
-	box-shadow: 0 5px 0 #e1d9d0;
-}
-
-.button:active {
-	transform: translateY(5px);
-	box-shadow: 0 0 0 #e98686;
 }

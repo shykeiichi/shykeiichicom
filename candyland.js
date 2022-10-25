@@ -28,7 +28,7 @@ function addToRGB(rgbColor, add=-40) {
     return splitColor.join(",");
 }
 
-function loadButtons() {
+function generateButtons() {
     let buttons = document.getElementsByTagName("CButton");
     var newCSS = "";
     for(var i = 0; i < buttons.length; i++) {
@@ -54,11 +54,16 @@ function loadButtons() {
         }
         color = fixedColor;
         
-        let styleName = "cl-" + `cl${i}`.hashCode();
+        let styleName = "cl-" + `cl${i}`.hashCode() + "-light";
         newCSS += `.${styleName} { background-color: rgb(${color}); box-shadow: 0 5px 0 rgb(${addToRGB(fixedColor)}); }`;
         newCSS += `.${styleName}:hover { box-shadow: 0 8px 0 rgb(${addToRGB(fixedColor)}); }`;
         newCSS += `.${styleName}:active { box-shadow: 0 0 0 rgb(${addToRGB(fixedColor)}); }`;
        
+        styleName = "cl-" + `cl${i}`.hashCode() + "-dark";
+        newCSS += `.${styleName} { background-color: rgb(${addToRGB(fixedColor, -70)}); box-shadow: 0 5px 0 rgb(${addToRGB(fixedColor, -100)}); }`;
+        newCSS += `.${styleName}:hover { box-shadow: 0 8px 0 rgb(${addToRGB(fixedColor, -100)}); }`;
+        newCSS += `.${styleName}:active { box-shadow: 0 0 0 rgb(${addToRGB(fixedColor, -100)}); }`;
+
         button.classList.add(`button`);
 
         // Add listeners
@@ -76,7 +81,6 @@ function loadButtons() {
         }
     }
 
-    let styleName = "cl-" + `cl${i}`.hashCode();
     var head = document.head || document.getElementsByTagName('head')[0];
     var style = document.createElement('style');
 
@@ -91,8 +95,24 @@ function loadButtons() {
 
     for(var i = 0; i < buttons.length; i++) {
         let button = buttons[i];
-        let styleName = "cl-" + `cl${i}`.hashCode();
+        let styleName = "cl-" + `cl${i}`.hashCode() + "-light";
         button.classList.add(styleName)
     }
 }
-loadButtons();
+generateButtons();
+
+function setTheme(theme) {
+    if(theme != "dark" && theme != "light") {
+        console.error(`Invalid theme ${theme}`);
+    }
+
+    let buttons = document.getElementsByTagName("CButton");
+    for(var i = 0; i < buttons.length; i++) {
+        let button = buttons[i];
+
+        button.className = "";
+        button.classList.add("button");
+        let styleName = "cl-" + `cl${i}`.hashCode() + "-" + theme;
+        button.classList.add(styleName)
+    }
+}
