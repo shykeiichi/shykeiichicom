@@ -81,3 +81,39 @@ cbutton:active {
     transition: all 50ms ease-in;
     transform: translateY(5px);
 }
+
+.textfield {
+    transition: all 100ms ease-in;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 15px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+    border: 0;
+    text-align: left;
+    background-color: #7FBCD2;
+}
+
+.textfield:hover {
+    transition: all 100ms ease-in;
+    background-color: #7FBCD2;
+    border: 0;
+}
+
+.textfield:focus {
+    transition: all 250ms ease-in;
+    border: 0;
+    background-color: #7FBCD2;
+    transition: all 50ms ease-in;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 0 rgb(87 148 170);
+    outline: none !important;
+}
