@@ -1,0 +1,46 @@
+#post {
+    width: 500px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    align-content: center;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+#post #text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 500px;
+    word-wrap:break-word;
+}
+
+#post #header {
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#post #header #date {
+    color: gray;
+}
+
+#composetextarea {
+    transition: all 100ms ease-in;
+    width: 322px;
+    height: 53px;
+    padding-top: 0px;
+}
+
+#post #compose {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    max-width: 500px;
+    word-wrap:break-word;
+}
+
+.container {
+    margin-bottom: 50px;
+}

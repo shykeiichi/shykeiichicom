@@ -8,17 +8,18 @@ a {
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     height: auto;
-    width: 100vw;
+    width: 99vw;
     padding-top: 5px;
     padding-bottom: 5px;
     display: grid;
     place-items: center;
     font-family: monospace;
+
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    background:#999;
 }
 
 header {
@@ -37,10 +38,6 @@ header {
 img {
     width: 20px;
     padding-right: 5px;
-}
-
-a {
-    color: white;
 }
 
 .container {
@@ -116,4 +113,21 @@ cbutton:active {
     transform: translateY(-5px);
     box-shadow: 0 5px 0 rgb(87 148 170);
     outline: none !important;
+}
+
+.subheader {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+    display: flex;
+    gap: 10px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.headerlinks {
+    font-weight: 400;
+    padding-left: 20px;
+    display: flex;
+    gap: 5px;
 }
