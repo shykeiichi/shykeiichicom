@@ -32,8 +32,12 @@
                         <input id="sendertext" placeholder="Optional Sender"/>
                     </div>
                     <div id="compose">
-                        <textarea id="composetextarea" style="margin-bottom: -25px" maxlength="300" placeholder="Content"></textarea>
-                        <CButton id="composebutton" on:click="sendData()">Compose</CButton>
+                        <div>
+                            <textarea id="composetextarea" style="margin-bottom: -25px" maxlength="300" placeholder="Content"></textarea>
+                        </div>
+                        <div>
+                            <CButton id="composebutton" on:click="sendData()">Compose</CButton>
+                        </div>
                     </div>
                 </div>
             </div>
