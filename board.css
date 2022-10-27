@@ -16,8 +16,8 @@
         width: 80vw;
     }
 
-    #post #compose {
-        height: 200px;
+    #composebutton {
+        padding-top: 100px;
     }
 }
 
