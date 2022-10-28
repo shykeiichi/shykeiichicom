@@ -29,12 +29,13 @@
             <div>
                 <div id="post">
                     <div style="text-align: left">
-                        <input id="sendertext" placeholder="Optional Sender"/>
+                        <input id="sendertext" placeholder="Optional Sender" maxlength="24"/>
                     </div>
                     <div id="compose">
                         <div>
                             <textarea id="composetextarea" style="margin-bottom: -25px" maxlength="300" placeholder="Content"></textarea>
                         </div>
+                        <br/><br/><br/>
                         <div>
                             <CButton id="composebutton" on:click="sendData()">Compose</CButton>
                         </div>
