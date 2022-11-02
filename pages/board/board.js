@@ -29,8 +29,10 @@ async function sendData() {
 
 window.onscroll = function(ev) {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        start += 10;
-        loadData();
+        if(lastdata != []) {
+            start += 10;
+            loadData();
+        }
     }
 };
 
@@ -42,8 +44,7 @@ async function loadData() {
         }
     });
     let json = await response.json();
-
-    console.log(json)
+    let lastdata = json;
 
     let doc = document.getElementById("postslist")
     var newhtml = "";
