@@ -52,6 +52,7 @@ async function login() {
     if(response.status != 201) {
         document.getElementById("login-error").innerHTML = json;
     } else {
+        localStorage.setItem("sessionid", json)
         window.location.href = "./index.html";
         emailInput.value = ""
         passwordInput.value = ""
