@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>shykeiichi</title>
+
+	<link rel='icon' type='image/png' href='./images/favicon.png'>
+	<!-- <link rel='stylesheet' href='./styles_light.css' id="themecss"> -->
+    <link rel='stylesheet' href='./styles/global.css'>
+    <link rel='stylesheet' href='./pages/login/login.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+    <body>
+        <script type="text/javascript" src="./scripts/init.js"></script>
+        <header id="header"></header>
+        <div class="main">
+            <div class="logincontainer">
+                <form class="login-box" id="box">
+                    <div id="spacer"></div>
+                    <div id="container">
+                        <input id="login-email" placeholder="Email" type="email" id="login-email" maxlength="50" required/>
+                        <input id="login-password" placeholder="Password" type="password" id="login-password" maxlength="64" required/>
+                        <CButton on:click="login()" >Log in</CButton>
+                    </div>
+                </form>
+                <form id="box">
+                    <div id="container">
+                        <input placeholder="Username" type="username" id="signup-username" maxlength="24" required/>
+                        <input placeholder="Email" type="email" id="signup-email" maxlength="50" required/>
+                        <input placeholder="Password" type="password" id="signup-password" maxlength="64" required/>
+                        <div id="signup-error"></div>
+                        <CButton color="#EC7272" id="signup-button" on:click="signup()">Sign up</CButton>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <a href="https://keii.dev" style="color: rgb(146, 146, 146); width: 120px; position: absolute; left: 20px;">To keii.dev</a>
+            <div>
+                shykeiichi © 2022
+            </div>
+        </footer>
+        <script type="text/javascript" src="./scripts/hash.js"></script>
+        <script type="text/javascript" src="./scripts/header.js"></script>
+        <script type="text/javascript" src="./scripts/candyland.js"></script>
+        <script type="text/javascript" src="./scripts/theme.js"></script>
+        <script type="text/javascript" src="./pages/login/login.js"></script>
+    </body>
+</html>

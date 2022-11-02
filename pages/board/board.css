@@ -7,23 +7,19 @@
     font-size: 16px;
 }
 
-/* @media only screen and (max-width: 500px){
+@media only screen and (max-width: 540px){
     #post {
         width: 80vw;
     }
 
-    #post #text {
-        width: 80vw;
+    input {
+        width: 100%;
     }
 
-    #composebutton {
-        margin-top: 100px;
+    #sendertext {
+        height: 30px;
     }
-
-    #composetextarea {
-        width: 70vw;
-    }
-} */
+}
 
 #post #text {
     padding-top: 50px;

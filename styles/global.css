@@ -51,6 +51,12 @@ img {
     height: 85vh;
 }
 
+@media only screen and (max-width: 250px) {
+    cbutton {
+        width: 80%;
+    }
+}
+
 cbutton {
     transition: all 100ms ease-in;
     margin: 10px;
@@ -129,5 +135,9 @@ cbutton:active {
     font-weight: 400;
     padding-left: 20px;
     display: flex;
-    gap: 5px;
+    gap: 20px;
+}
+
+#themebutton {
+    cursor: pointer;
 }

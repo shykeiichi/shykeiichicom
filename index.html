@@ -6,23 +6,14 @@
 
 	<title>shykeiichi</title>
 
-	<link rel='icon' type='image/png' href='./favicon.png'>
-	<!-- <link rel='stylesheet' href='./styles_light.css' id="themecss"> -->
-    <link rel='stylesheet' href='./global.css'>
+	<link rel='icon' type='image/png' href='./images/favicon.png'>
+	<!-- <link rel='stylesheet' href='./styles/styles_light.css' id="themecss"> -->
+    <link rel='stylesheet' href='./styles/global.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
     <body>
-        <header>
-            <a href="./index.html">shykeiichi</a>
-            <div class="headerlinks">
-                <a href="./board.html">board</a>
-            </div>
-            <div style="width: 100%; height: 20px;"></div>
-            
-            <img src="images/light.svg" alt="theme switcher" id="themebutton"/>
-        </header>
-        <div class="subheader">
-            <a href="./index.html">/</a>
-        </div>
+        <script type="text/javascript" src="./scripts/init.js"></script>
+        <header id="header"></header>
         <div class="main">
             <div class="container">
                 <CButton color="#EC7272" on:redirect='https://www.youtube.com/c/shykeiichi'>Youtube</CButton>
@@ -38,45 +29,12 @@
                 shykeiichi © 2022
             </div>
         </footer>
-        <script type="text/javascript" src="./candyland.js"></script>
+        <script type="text/javascript" src="./scripts/header.js"></script>
+        <script type="text/javascript" src="./scripts/candyland.js"></script>
+        <script type="text/javascript" src="./scripts/theme.js"></script>
+        <script type="text/javascript" src="./scripts/hash.js"></script>
         <script>
-            let theme;
-            if(localStorage.getItem('theme') == undefined) {
-                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    theme = "dark";
-                } else {
-                    theme = "light";
-                }
-            } else {
-                theme = localStorage.getItem('theme');
-            }
-            
-            updateTheme();
-
-            document.getElementById('themebutton').addEventListener('click', function (event) {
-                if(theme == "light") {
-                    theme = "dark";
-                } else {
-                    theme = "light";
-                }
-                updateTheme();
-            });
-
-            function updateTheme() {
-                document.getElementById('themebutton').setAttribute('src', `images/${theme}.svg`)
-                if(document.getElementById('themecss') != undefined) {
-                    document.getElementById('themecss').remove();
-                }
-                var cssFile = document.createElement('link');
-                cssFile.rel = 'stylesheet';
-                cssFile.href = `styles_${theme}.css`;  // or path for file {themes('/styles/mobile.css')}
-                cssFile.id = "themecss";
-                document.head.appendChild(cssFile); 
-
-                localStorage.setItem('theme', theme);
-
-                setTheme(theme);
-            }
+            sha256("Dinkel2006!").then((result) => console.log(result))
         </script>
     </body>
 </html>
