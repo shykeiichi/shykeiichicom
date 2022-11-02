@@ -17,8 +17,45 @@ function isStrongPassword(password) {
     }
 }
 
-function login() {
+async function login() {
     console.log("login")
+    let emailInput = document.getElementById("login-email")
+    let passwordInput = document.getElementById("login-password")
+
+    if(emailInput.value == "" || passwordInput == "") {
+        document.getElementById("login-error").innerHTML = "Not all required fields are filled!"
+        return;
+    }
+
+    if(!isEmail(emailInput.value)) {
+        document.getElementById("login-error").innerHTML = "Invalid email address!"
+        return;
+    }
+
+    let password = await sha256(passwordInput.value)
+
+    document.getElementById("login-error").innerHTML = "";
+
+    const response = await fetch(`https://22widi.ssis.nu/api/v1/user/login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            "email": emailInput.value,
+            "password": password
+        })
+    });
+    
+    let json = await response.json();
+
+    if(response.status != 201) {
+        document.getElementById("login-error").innerHTML = json;
+    } else {
+        window.location.href = "./index.html";
+        emailInput.value = ""
+        passwordInput.value = ""
+    }
 }
 
 async function signup() {
