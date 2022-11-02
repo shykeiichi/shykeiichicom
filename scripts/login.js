@@ -18,4 +18,5 @@ window.onload = async function() {
     let json = await response.json();
 
     sessioninfo = json;
+    headerFunction();
 }
