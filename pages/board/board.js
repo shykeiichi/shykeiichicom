@@ -1,16 +1,10 @@
 async function sendData() {
     let messageelement = document.getElementById("composetextarea") 
-    let senderelement = document.getElementById("sendertext") 
     let messagevalue = document.getElementById("composetextarea").value 
-    let sendervalue = document.getElementById("sendertext").value 
 
     if(messagevalue.length == 0) {
         messageelement.setAttribute("placeholder", "No text provided")
         return
-    }
-
-    if(sendervalue == "") {
-        sendervalue = null
     }
 
     const response = await fetch(`https://22widi.ssis.nu/api/v1/board/send`, {
@@ -20,12 +14,11 @@ async function sendData() {
         },
         body: JSON.stringify({
             "message": messagevalue,
-            "sender": sendervalue
+            "sessionid": localStorage.getItem("sessionid")
         })
     });
 
     messageelement.value = ""
-    senderelement.value = ""
 
     let doc = document.getElementById("postslist")
     doc.innerHTML = ""
@@ -50,17 +43,19 @@ async function loadData() {
     });
     let json = await response.json();
 
+    console.log(json)
+
     let doc = document.getElementById("postslist")
     var newhtml = "";
     for(var i = 0; i < Object.keys(json).length; i++) {
-        var date = new Date(parseInt(json[i]["posttime"])*1000);
+        var date = new Date(parseInt(json[i][4])*1000);
         newhtml += "<div id=\"post\">"
         newhtml += "<div id=\"text\">"
-        newhtml += json[i]["message"]
+        newhtml += json[i][3]
         newhtml += "</div>"
         newhtml += "<div id=\"header\">"
         newhtml += "<div id=\"user\">"
-        newhtml += json[i]["sender"] == null ? "Anonymous" : json[i]["sender"];
+        newhtml += json[i][1] == null ? "Anonymous" : json[i][1];
         newhtml += "</div>"
         newhtml += "<div id=\"date\">"
         newhtml += `${date.getHours()}:${date.getMinutes()} ${date.getDate()} ${parseMonth(date.getMonth())} ${date.getFullYear()}`

@@ -14,6 +14,11 @@ window.onload = async function() {
             "sessionid": localStorage.getItem("sessionid")
         })
     });
+
+    if(response.status == 400) {
+        localStorage.setItem("sessionid", undefined);
+        return;
+    }
     
     let json = await response.json();
 
