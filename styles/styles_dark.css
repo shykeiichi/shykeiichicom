@@ -23,3 +23,8 @@ header a {
 .subheader a {
     color: white;
 }
+
+.mediacontainer #container {
+    background-color: #131516;
+    border-bottom: 1px solid grey;
+}

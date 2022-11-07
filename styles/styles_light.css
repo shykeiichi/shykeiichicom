@@ -19,3 +19,8 @@ header a {
 .subheader a {
     color: black;
 }
+
+.mediacontainer #container {
+    filter: drop-shadow(0px 2px 20px lightgray);
+    color: black;
+}

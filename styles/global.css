@@ -15,8 +15,7 @@ footer{
     display: grid;
     place-items: center;
     font-family: monospace;
-
-    position:fixed;
+    position:absolute;
     left:0px;
     bottom:0px;
     background:#999;
@@ -33,6 +32,19 @@ header {
     padding-left: 15px;
     padding-right: 15px;
     margin: 5px;
+}
+
+.burgermenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 64px;
+    left: 0px;
+    width: 100vw;
+    font-family: monospace;
+    font-size: 22px;
+    padding: 10px 20px;
+    border-bottom: 1px solid grey;
 }
 
 img {

@@ -1,34 +1,39 @@
+let headerFunctionRun = 0;
+let lastWindowInner = 0;
+
 var headerFunction = function() {
     if(window.innerWidth < 530) {
-        let doc = document.getElementById("header").innerHTML = `<i id="header-menu" class="material-icons">menu</i>
+
+        document.getElementById("header").innerHTML = `<i id="header-menu" class="material-icons">menu</i>
                                                                 <div style="width: 100%; height: 20px;"></div>
                                                                 <a href="./index.html">shykeiichi</a>
                                                                 <div style="width: 100%; height: 20px;"></div>
                                                                 <img src="images/light.svg" alt="theme switcher" id="themebutton"/>`;
-    } else {
-        if(sessioninfo == undefined) {
-            let doc = document.getElementById("header").innerHTML = `<a href="./index.html">shykeiichi</a>
-                                                                    <div class="headerlinks">  
-                                                                        <a href="./board.html">board</a>  
-                                                                        <a href="./medialog.html">medialog</a>
-                                                                    </div>
-                                                                    <div style="width: 100%; height: 20px;"></div>
-                                                                    <div class="headerlinks">  
-                                                                        <a style="width: 100px" href="./login.html">Log in</a>
-                                                                    </div>
-                                                                    <img src="images/light.svg" alt="theme switcher" id="themebutton"/>`;
-        } else {
-            let doc = document.getElementById("header").innerHTML = `<a href="./index.html">shykeiichi</a>
-                                                                    <div class="headerlinks">  
-                                                                        <a href="./board.html">board</a>  
-                                                                        <a href="./medialog.html">medialog</a>
-                                                                    </div>
-                                                                    <div style="width: 100%; height: 20px;"></div>
-                                                                    <div class="headerlinks">  
-                                                                        <a style="width: 100px">${sessioninfo["username"]}</a>
-                                                                    </div>
-                                                                    <img src="images/light.svg" alt="theme switcher" id="themebutton"/>`;   
+        
+        if(lastWindowInner > 530) {
+            let button = document.getElementById("header-menu")
+            button.addEventListener("click", function() {
+                console.log(document.getElementById("burger-menu-dropdown"))
+                if(document.getElementById("header-menu").innerHTML == "menu") {
+                    var div = document.createElement('div');
+                    div.id = "burger-menu-dropdown"
+                    div.className = "burgermenu"
+                    div.innerHTML = `<div>
+                                        Home
+                                    </div>`;
+                    document.getElementById('header').outerHTML += div.outerHTML
+
+                    document.getElementById("header-menu").innerHTML = "close"
+                } else {
+                    document.getElementById("burger-menu-dropdown").outerHTML = ""
+                    document.getElementById("header-menu").innerHTML = "menu"
+                }
+            });
         }
+    } else {
+        document.getElementById("header").innerHTML = `<a href="./index.html">shykeiichi</a>
+                                                                <div style="width: 100%; height: 20px;"></div>
+                                                                <img src="images/light.svg" alt="theme switcher" id="themebutton"/>`;
     }
     if(theme == undefined) {
         theme = "light";
@@ -46,6 +51,8 @@ var headerFunction = function() {
         }
         updateTheme();
     });
+
+    lastWindowInner = window.innerWidth;
 }
 
 window.addEventListener("resize", headerFunction);
