@@ -1,0 +1,24 @@
+.container {
+    width: 95px;
+    height: 95px;
+    background-color: #232634;
+    border-radius: 100px;
+    filter: drop-shadow(8px 8px 16px #1A1B2740)
+    drop-shadow(-8px -8px 16px #41455940);
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 400ms ease-in-out 0s;
+    cursor: pointer;
+}
+
+.container:hover {
+    border-radius: 20px;
+    transition: all 400ms ease-in-out 0s;
+}
+
+.container svg {
+    width: 40px;
+    height: 40px;
+}
