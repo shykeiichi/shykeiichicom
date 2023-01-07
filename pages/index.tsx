@@ -6,7 +6,7 @@ import { useRef } from 'react'
 
 export default function Home() {
 
-  let ref = useRef(null)
+  let ref = useRef<HTMLDivElement>(null)
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Home() {
           <div className={styles.text}>
             Welcome to my little side of the internet
           </div>
-          <IconButton click={() => ref.current.scrollIntoView({ behavior: 'smooth' })} icon={<ExpandMore />}/>
+          <IconButton click={() => ref.current ? ref.current.scrollIntoView({ behavior: 'smooth' }) : {}} icon={<ExpandMore />}/>
         </div>
       </div>
       <div className={styles.page} ref={ref}>
